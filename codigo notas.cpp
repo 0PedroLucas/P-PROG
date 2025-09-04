@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <locale.h>
+float av1, av2, av3;
+float t1, t2, t3;
+float p1, p2, p3;
+float media;
+int faltas;
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	printf("Digite a nota do trabalho 1: ");
+	scanf("%f", &t1);
+	printf("Digite a nota da prova 1: ");
+	scanf("%f", &p1);
+	
+	printf("Digite a nota do trabalho 2: ");
+	scanf("%f", &t2);
+	printf("Digite a nota da prova 2: ");
+	scanf("%f", &p2);
+	
+	printf("Digite a nota do trabalho 3: ");
+	scanf("%f", &t3);
+	printf("Digite a nota da prova 3: ");
+	scanf("%f", &p3);
+	
+	av1 = (t1*0.2) + (p1*0.8);
+	av2 = (t2*0.2) + (p2*0.8);
+	av3 = (t3*0.2) + (p3*0.8);
+	
+	media= (av1 + av2 + av3)/3;
+	
+	printf("\nDigite o numero de faltas:");
+scanf("%i", &faltas);
+	printf("Sua média final é: %.1f", media );
+	
+	if(media>=6 && faltas <= 25){
+		printf(" AP");
+	}else {	
+	    if(media>=4 && faltas <= 25){
+	    	printf(" EX");
+	    }else{
+	    	printf(" RP");
+	    }
+	}
+}
+
+	       
+
+	
+	
+	
+	
+	
+	
+
