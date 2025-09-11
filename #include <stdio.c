@@ -7,47 +7,58 @@ typedef struct dados
 } dados;
 int main()
 {
-	dados pessoa;
+	int qntdpessoas, i;
+	printf("Calcular o IMC de quantas pessoas: ");
+	scanf("%i", &qntdpessoas);
+	fflush(stdin);
+	
+	dados pessoa[qntdpessoas];
 
-	printf("Digite o nome da pessoa: ");
-	gets(pessoa.nome);
+	for(i=0;i<qntdpessoas;i++){
+		
+		printf("Digite o nome da pessoa: ");
+	gets(pessoa[i].nome);
 	fflush(stdin);
 
 	printf("Digite a idade da pessoa: ");
-	scanf("%i", &pessoa.idade);
+	scanf("%i", &pessoa[i].idade);
 
 	printf("Digite o peso da pessoa: ");
-	scanf("%i", &pessoa.peso);
+	scanf("%i", &pessoa[i].peso);
 
 	printf("Digite a altura da pessoa: ");
-	scanf("%f", &pessoa.altura);
+	scanf("%f", &pessoa[i].altura);
 
-	pessoa.imc = pessoa.peso / (pessoa.altura * pessoa.altura);
+	pessoa[i].imc = pessoa[i].peso / (pessoa[i].altura * pessoa[i].altura);
 
-	printf("\nNome digitado: %s", pessoa.nome);
+	}
+for(i=0; i<qntdpessoas;i++){
+	printf("\nNome digitado: %s", pessoa[i].nome);
 
-	printf("\npeso digitado: %i", pessoa.peso);
+	printf("\npeso digitado: %i", pessoa[i].peso);
 
-	printf("\naltura digitado: %.2f", pessoa.altura);
+	printf("\naltura digitado: %.2f", pessoa[i].altura);
 
-	printf("\nIdade digitada: %i", pessoa.idade);
+	printf("\nIdade digitada: %i", pessoa[i].idade);
 
-	printf("\nSeu IMC é: %f", pessoa.imc);
-	// qual classificação a pessoa esta
-	if (pessoa.imc < 20){
+	printf("\nSeu IMC é: %f", pessoa[i].imc);
+	if (pessoa[i].imc < 20){
       	printf("\nVoce esta abaixo do peso");
 	}
-	else if (20 <= pessoa.imc <= 24.9){
+	else if (20 <= pessoa[i].imc <= 24.9){
 		printf("\nVoce esta no peso normal");
 	}
-		else if (25<pessoa.imc<+29.9){
+		else if (25<pessoa[i].imc<+29.9){
 			printf("\nVoce possui obesidade moderada");
 		}
-		else if(30<pessoa.imc<=39.9){
+		else if(30<pessoa[i].imc<=39.9){
 			printf("\nVoce possui obesidade moderada");
 		}
-		else if (pessoa.imc>40){
+		else if (pessoa[i].imc>40){
 			printf("\nVoce possui obesidade morbida");
 		}
+
+
+}
 
 }
