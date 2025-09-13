@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 int main(){
-    int nmr, i;
-    printf("\nDigite um numero: ");
+  int nmr, soma=0, i;
+  printf("Digite um numero(0 para a soma): ");
+  scanf("%i", &nmr);
+  
+  while(nmr != 0){
+      soma+=nmr;
+    printf("Digite um numero(0 para a soma): ");
     scanf("%i", &nmr);
-    
-    printf("\ntabuada do %i\n", nmr);
-    for(i=1; i<=15; i++){
-        printf("\n%i x %i = %i", nmr, i, nmr*i);
-    }
+  }
+  printf("Soma total: %i", soma);
 }
